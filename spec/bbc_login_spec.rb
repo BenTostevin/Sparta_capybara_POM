@@ -48,7 +48,7 @@ describe 'Testing the BBC' do
       @bbc_site.bbc_login.fill_invalid_username
       @bbc_site.bbc_login.fill_password
       @bbc_site.bbc_login.click_submit
-      expect(@bbc_site.bbc_login.letters_password).to include('Sorry, we can’t find an account with that username.')
+      expect(@bbc_site.bbc_login.invalid_username).to include('Sorry, we can’t find an account with that username.')
     end
 
     it 'should tell you that your email address does not look right if you end it in an @ without clicking submit' do
@@ -57,7 +57,7 @@ describe 'Testing the BBC' do
       @bbc_site.bbc_homepage.click_sign_in_link
       @bbc_site.bbc_login.fill_wrong_format_email
       @bbc_site.bbc_login.fill_password
-      expect(@bbc_site.bbc_login.letters_password).to include('Sorry, that email doesn’t look right.')
+      expect(@bbc_site.bbc_login.wrong_format_email).to include('Sorry, that email doesn’t look right.')
     end
 
     it 'should tell you the password field is missing after exiting the password field without entering any characters' do

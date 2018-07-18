@@ -23,27 +23,27 @@ class BBC_Login
     sleep 1
   end
 
-  def fill_password
-    fill_in PASSWORD_INPUT, with: DUMMY_PASSWORD
-    sleep 1
-  end
-
-  def click_submit
-    click_button 'Sign in'
-    sleep 1
-  end
-
   def fill_unregistered_email
     fill_in USERNAME_INPUT, with: UNREGISTERED_EMAIL
     sleep 1
   end
 
-  def unregistered_email
-    page.find('.form-message__text').text
-  end
-
   def fill_registered_email
     fill_in USERNAME_INPUT, with: REGISTERED_EMAIL
+    sleep 1
+  end
+
+  def fill_invalid_username
+    fill_in USERNAME_INPUT, with: INVALID_USERNAME
+  end
+
+  def fill_wrong_format_email
+    fill_in USERNAME_INPUT, with: WORNG_FORMAT_EMAIL
+  end
+
+
+  def fill_password
+    fill_in PASSWORD_INPUT, with: DUMMY_PASSWORD
     sleep 1
   end
 
@@ -52,32 +52,43 @@ class BBC_Login
     sleep 1
   end
 
-  def short_password
+  def fill_letters_password
+    fill_in PASSWORD_INPUT, with: LETTERS_PASSWORD
+  end
+
+  def fill_empty_password
+    fill_in PASSWORD_INPUT, with: EMPTY_PASSWORD
+  end
+
+  def click_submit
+    click_button 'Sign in'
+    sleep 1
+  end
+
+
+  def unregistered_email
     page.find('.form-message__text').text
   end
 
-  def fill_letters_password
-    fill_in PASSWORD_INPUT, with: LETTERS_PASSWORD
+  def short_password
+    page.find('.form-message__text').text
   end
 
   def letters_password
     page.find('.form-message__text').text
   end
 
-  def fill_invalid_username
-    fill_in USERNAME_INPUT, with: INVALID_USERNAME
-  end
-
   def invalid_username
     page.find('.form-message__text').text
   end
 
-  def fill_wrong_format_email
-    fill_in USERNAME_INPUT, with: WORNG_FORMAT_EMAIL
+  def wrong_format_email
+    page.find('.form-message__text').text
   end
 
-  def fill_empty_password
-    fill_in PASSWORD_INPUT, with: EMPTY_PASSWORD
+  def password_missing
+    page.find('.form-message__text').text
   end
+
 
 end
