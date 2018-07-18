@@ -24,8 +24,7 @@ class BBC_Registration
   end
 
   def enter_email
-    fill_in('Email', with: 'aanika.tylar@lm0k.com
-')
+    fill_in('Email', with: 'praylee.georgiana@lm0k.com')
     sleep 1
   end
 

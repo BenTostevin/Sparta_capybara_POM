@@ -22,7 +22,7 @@ describe 'Testing the BBC Registration' do
 
       expect(@bbc_site.bbc_registration.check_registered).to be true
       # expect(@bbc_site.bbc_registration.check_registered_again).to 'BBC - Register - thank you'
-    end    
+    end
 
   end
 
